@@ -1,13 +1,13 @@
 /*
  * @Author: 刘晨曦
  * @Date: 2021-09-09 14:58:54
- * @LastEditTime: 2021-09-09 15:00:43
+ * @LastEditTime: 2021-09-09 15:30:08
  * @LastEditors: Please set LastEditors
  * @Description: Axios的封装
  * @FilePath: \widget-vue2\src\api\httpInstance.js
  */
 import axios from 'axios'
-import { message as Message } from 'antd'
+import { Message } from 'element-ui'
 
 const REQUEST_SUCCESS = 0
 
@@ -15,7 +15,7 @@ const http = axios.create({
   timeout: 20000,
   withCredentials: true,
   headers: { 'X-Requested-With': 'XMLHttpRequest' },
-  baseURL: ''
+  baseURL: VUE_APP_CONTEXT
 })
 
 // 响应拦截器

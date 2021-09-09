@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2021-09-09 14:58:32
- * @LastEditTime: 2021-09-09 14:58:57
+ * @LastEditTime: 2021-09-09 15:21:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \widget-vue2\src\api\index.js
  */
-import http from '@/core/httpInstance'
+import http from '@/api/httpInstance'
 
 function getUserInfo () {
   return http({
