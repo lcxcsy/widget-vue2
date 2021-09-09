@@ -1,27 +1,12 @@
 <!--
  * @Author: 刘晨曦
  * @Date: 2021-09-09 10:37:13
- * @LastEditTime: 2021-09-09 15:08:50
+ * @LastEditTime: 2021-09-09 15:58:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \widget-vue2\README.md
 -->
 
-# Widget-vue2-template
+# Widget-vue2
 
-> Vue2 项目开发模板。
-
-### Features
-
-- Router
-- Axios
-- Sass
-- Element-ui
-- Self-registered component
-
-### References
-
-- [Vue-Router](https://www.npmjs.com/package/vue-router)
-- [Axios](https://www.npmjs.com/search?q=Axios)
-- [Sass](https://www.npmjs.com/package/sass)
-- [Element-UI](https://www.npmjs.com/package/element-ui)
+> 基于 Vue2 开发的前端小组件
