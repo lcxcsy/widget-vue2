@@ -1,7 +1,7 @@
 /*
  * @Author: 刘晨曦
  * @Date: 2021-09-09 14:32:47
- * @LastEditTime: 2021-09-09 14:34:24
+ * @LastEditTime: 2021-09-10 10:36:50
  * @LastEditors: Please set LastEditors
  * @Description: 注册所有的子组件
  * @FilePath: \widget-vue2\src\components\index.js
