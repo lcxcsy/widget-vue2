@@ -16,14 +16,13 @@ module.exports = {
       .set('@', path.join(__dirname, 'src'))
       .set('public', path.join(__dirname, 'public'))
   },
-  // css: {
-  //   loaderOptions: {
-  //     scss: {
-  //       prependData: `@import '@/styles/index.scss';` // 全局样式
-  //     }
-  //   }
-  // },
-
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `@import '@/styles/index.scss';` // 全局样式
+      }
+    }
+  },
   // 用于生产模式下前后端联调
   devServer: {
     proxy: {

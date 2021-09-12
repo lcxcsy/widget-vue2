@@ -7,7 +7,11 @@
  * @FilePath: \widget-vue2\src\components\tower\src\index.vue
 -->
 <template>
-  <canvas id="towerCanvas" width="500" height="500">当前浏览器不支持Canvas</canvas>
+  <canvas
+    id="towerCanvas"
+    width="500"
+    height="500"
+  >当前浏览器不支持Canvas</canvas>
 </template>
 
 <script>
@@ -28,14 +32,13 @@ export default {
       canvasInstance = new TowerCanvas({
         mCanvas: document.getElementById('towerCanvas'),
         ctx: document.getElementById('towerCanvas').getContext('2d'),
-        basePosition: { x: 150, y: 400 }
-      })
-
-      canvasInstance.drawBody({
+        basePosition: { x: 150, y: 400 },
         width: 20, //  塔身每一层的宽度
         height: 30, // 塔身每一层的高度
-        count: 9 // 塔身的节数
+        count: 9, // 塔身的节数
+        rightLength: 220 // 右臂的长度
       })
+
       this.drawRect()
       this.drawLine()
       this.variousHooks()
@@ -47,8 +50,6 @@ export default {
      * @return {*}
      */
     drawRect () {
-      // 驾驶室
-      canvasInstance.drawRect(150, 115, 10, 40, false, true, 'rgb(249,179,45)')
       // 左小重物
       canvasInstance.drawRect(57, 113, 9, 15, false, true, 'rgb(249,179,45)')
       canvasInstance.drawRect(67, 113, 9, 15, false, true, 'rgb(249,179,45)')
@@ -85,33 +86,6 @@ export default {
       canvasInstance.drawLine(160, 45, 350, 90, 1, 'rgb(249,179,45)')
       canvasInstance.drawLine(160, 45, 353, 90, 1, 'rgb(249,179,45)')
       canvasInstance.drawLine(160, 45, 356, 90, 1, 'rgb(249,179,45)')
-      // 右臂上下线条
-      canvasInstance.drawLine(170, 110, 390, 110, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(180, 90, 380, 90, 1, 'rgb(249,179,45)')
-
-      // 上下线见得线    比例1:2
-      canvasInstance.drawLine(170, 110, 180, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(190, 110, 180, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(190, 110, 200, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(210, 110, 200, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(210, 110, 220, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(230, 110, 220, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(230, 110, 240, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(250, 110, 240, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(250, 110, 260, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(270, 110, 260, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(270, 110, 280, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(290, 110, 280, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(290, 110, 300, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(310, 110, 300, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(310, 110, 320, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(330, 110, 320, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(330, 110, 340, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(350, 110, 340, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(350, 110, 360, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(370, 110, 360, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(370, 110, 380, 90, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(390, 110, 380, 90, 1, 'rgb(249,179,45)')
 
       // 左吊臂
       canvasInstance.drawLine(55, 110, 150, 110, 1, 'rgb(249,179,45)')

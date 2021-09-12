@@ -8,11 +8,18 @@
  */
 
 export default class TowerCanvas {
-  constructor ({ mCanvas, ctx, basePosition }) {
+  constructor ({ mCanvas, ctx, basePosition, width, height, count, rightLength }) {
     this.mCanvas = mCanvas
     this.ctx = ctx // 声明context对象
     this.basePosition = basePosition // 塔吊的基准位置
-    this.drawCabAndBase()
+    this.width = width //  塔身每一层的宽度
+    this.height = height // 塔身每一层的高度
+    this.count = count // 塔身的节数
+    this.rightLength = rightLength
+    this.initBody()
+    this.initRightArm()
+    this.initCabAndBase()
+    this.initRightArm()
   }
 
   /**
@@ -215,10 +222,14 @@ export default class TowerCanvas {
     this.ctx.fillText(text, x, y)
   }
 
-  drawBody ({ width = 20, height = 30, count = 8, color = 'rgb(249, 179, 45)' }) {
+  initBody () {
     const { x, y } = this.basePosition
+    const width = this.width
+    const height = this.height
+    const count = this.count
+    const color = 'rgb(249, 179, 45)'
     this.ctx.clearRect(x, y, width, height * 8)
-    for (let i = 0; i < count; i++) {
+    for (let i = 0;i < count;i++) {
       this.drawArc(x, y - height * i, 2, 0, 360, false, false, true, color)
       this.drawArc(x + width, y - height * i, 2, 0, 360, false, false, true, color)
       if (i < count - 1) {
@@ -228,17 +239,46 @@ export default class TowerCanvas {
     }
   }
 
+  initRightArm () {
+    const width = this.width
+    const height = this.height
+    const count = this.count
+    const color = 'rgb(249,179,45)'
+    const rightLength = this.rightLength
+    const { x, y } = this.basePosition
+
+    const lowHeight = y - height * count - 20
+    const highHeight = y - height * count - 40
+    // 右臂上下线条
+    this.drawLine(x + width, lowHeight, 390, 110, 1, color)
+    this.drawLine(x + width - 2, highHeight, 380, 90, 1, color)
+
+    // 上下线见得线    比例1:2
+    const rightCount = rightLength / 20
+    for (let index = 0;index < rightCount;index++) {
+      this.drawLine(x + width + 20 * index, lowHeight, x + width + 20 * (index + 1) - 10, highHeight, 1, color)
+      this.drawLine(x + width + 20 * (index + 1), lowHeight, x + width + 20 * (index + 1) - 10, highHeight, 1, color)
+    }
+  }
+
   /**
    * @description: 初始化驾驶室
    * @param {*}
    * @return {*}
    */
-  drawCabAndBase () {
+  initCabAndBase () {
+    const height = this.height
+    const width = this.width
+    const color = 'rgb(249, 179, 45)'
+    const { x, y } = this.basePosition
     // 驾驶室
-    this.drawRect(150, 115, 10, 40, false, true, 'rgb(249,179,45)')
-    // 底座
-    this.drawLine(110, 400, 210, 400, 1, 'rgb(249,179,45)')
-    this.drawLine(135, 400, 150, 340, 1, 'rgb(249,179,45)')
-    this.drawLine(185, 400, 170, 340, 1, 'rgb(249,179,45)')
+    this.drawRect(x, y - height * 9 - 15, 10, 40, false, true, color)
+    this.drawLine(x + width - 10, y - height * 9 - 15, 170, 115, 1, color)
+    this.drawLine(x + width, y - height * 9 - 15, 180, 135, 1, color)
+    // 底部横线
+    this.drawLine(x - 60, y, x + 20 + 60, y, 2, color)
+    // 底部斜线
+    this.drawLine(x - Math.cos(Math.PI / 3) * height * 2, y, x, y - height * 2, 1.5, color)
+    this.drawLine(x + Math.cos(Math.PI / 3) * height * 2 + width, y, x + width, y - height * 2, 1.5, color)
   }
 }
