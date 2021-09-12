@@ -9,8 +9,12 @@
 
 # Widget-vue2
 
-> 基于 Vue2 开发的前端小组件
+> 基于 Vue2 开发的小组件
 
 ### widgets
 
 1. Canvas 实现一个动态的塔吊
+
+### References
+
+1. [https://blog.csdn.net/qq_39606853/article/details/86177439](https://blog.csdn.net/qq_39606853/article/details/86177439)
