@@ -275,6 +275,9 @@ export default class TowerCanvas {
     this.drawRect(x, y - height * 9 - 15, 10, 40, false, true, color)
     this.drawLine(x + width - 10, y - height * 9 - 15, 170, 115, 1, color)
     this.drawLine(x + width, y - height * 9 - 15, 180, 135, 1, color)
+    this.drawLine(x + width + 10, y - height * 9 + 5, 160, 135, 1, 'rgb(249,179,45)')
+    this.drawLine(x + width + 10, y - height * 9 + 5, 170, 155, 1, 'rgb(249,179,45)')
+    this.drawLine(x + width, x + width - 15, 160, 155, 1, 'rgb(249,179,45)')
     // 底部横线
     this.drawLine(x - 60, y, x + 20 + 60, y, 2, color)
     // 底部斜线

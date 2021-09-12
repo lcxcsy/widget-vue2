@@ -63,11 +63,7 @@ export default {
      */
     drawLine () {
       // 驾驶室
-      canvasInstance.drawLine(160, 115, 170, 115, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(170, 115, 180, 135, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(180, 135, 160, 135, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(180, 135, 170, 155, 1, 'rgb(249,179,45)')
-      canvasInstance.drawLine(170, 155, 160, 155, 1, 'rgb(249,179,45)')
+
       // 塔吊尖
       canvasInstance.drawLine(150, 110, 170, 110, 1, 'rgb(249,179,45)')
       canvasInstance.drawLine(150, 110, 160, 20, 1, 'rgb(249,179,45)')
