@@ -62,8 +62,6 @@ export default {
      * @return {*}
      */
     drawLine () {
-      // 驾驶室
-
       // 塔吊尖
       canvasInstance.drawLine(150, 110, 170, 110, 1, 'rgb(249,179,45)')
       canvasInstance.drawLine(150, 110, 160, 20, 1, 'rgb(249,179,45)')

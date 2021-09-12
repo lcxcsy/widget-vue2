@@ -272,15 +272,19 @@ export default class TowerCanvas {
     const color = 'rgb(249, 179, 45)'
     const { x, y } = this.basePosition
     // 驾驶室
-    this.drawRect(x, y - height * 9 - 15, 10, 40, false, true, color)
-    this.drawLine(x + width - 10, y - height * 9 - 15, 170, 115, 1, color)
-    this.drawLine(x + width, y - height * 9 - 15, 180, 135, 1, color)
-    this.drawLine(x + width + 10, y - height * 9 + 5, 160, 135, 1, 'rgb(249,179,45)')
-    this.drawLine(x + width + 10, y - height * 9 + 5, 170, 155, 1, 'rgb(249,179,45)')
-    this.drawLine(x + width, x + width - 15, 160, 155, 1, 'rgb(249,179,45)')
-    // 底部横线
+    // 左侧方块
+    this.drawRect(x, y - height * 9 - 15, width / 2, 40, false, true, color)
+    // 两条斜线
+    this.drawLine(x + width, y - height * 9 - 15, x + width + 10, y - height * 9 + 5, 1, color)
+    this.drawLine(x + width, y - height * 9 + 25, x + width + 10, y - height * 9 + 5, 1, color)
+    // 三条横线
+    this.drawLine(x + width - 10, y - height * 9 - 15, x + width, y - height * 9 - 15, 1, color)
+    this.drawLine(x + width - 10, y - height * 9 + 5, x + width + 10, y - height * 9 + 5, 1, color)
+    this.drawLine(x + width - 10, y - height * 9 + 25, x + width, y - height * 9 + 25, 1, color)
+
+    // 底座横线
     this.drawLine(x - 60, y, x + 20 + 60, y, 2, color)
-    // 底部斜线
+    // 底座斜线
     this.drawLine(x - Math.cos(Math.PI / 3) * height * 2, y, x, y - height * 2, 1.5, color)
     this.drawLine(x + Math.cos(Math.PI / 3) * height * 2 + width, y, x + width, y - height * 2, 1.5, color)
   }
