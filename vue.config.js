@@ -1,7 +1,7 @@
 /*
  * @Author: 刘晨曦
  * @Date: 2021-09-09 11:25:38
- * @LastEditTime: 2021-09-28 12:20:56
+ * @LastEditTime: 2021-09-28 17:01:47
  * @LastEditors: Please set LastEditors
  * @Description: VUE的配置
  * @FilePath: \widget-vue2\vue.config.js
