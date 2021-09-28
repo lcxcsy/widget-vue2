@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-09 11:25:06
- * @LastEditTime: 2021-09-09 14:37:49
+ * @LastEditTime: 2021-09-28 11:34:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \widget-vue2\src\router\index.js
@@ -28,7 +28,8 @@ const processRouteObj = ({ component, children, ...args }) => {
 }
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
+  mode:'hash',
   base: process.env.BASE_URL,
   routes: createRoute(routerConfig)
 })
