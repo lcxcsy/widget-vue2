@@ -1,7 +1,7 @@
 /*
  * @Author: 刘晨曦
  * @Date: 2021-09-10 10:18:33
- * @LastEditTime: 2021-09-10 17:33:11
+ * @LastEditTime: 2021-09-13 09:59:17
  * @LastEditors: Please set LastEditors
  * @Description: canvas 函数的封装
  * @FilePath: \widget-vue2\src\components\tower\lib\index.js
@@ -222,6 +222,11 @@ export default class TowerCanvas {
     this.ctx.fillText(text, x, y)
   }
 
+  /**
+   * @description: 初始化吊塔机身
+   * @param {*}
+   * @return {*}
+   */
   initBody () {
     const { x, y } = this.basePosition
     const width = this.width

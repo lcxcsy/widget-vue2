@@ -1,17 +1,13 @@
 <!--
  * @Author: 刘晨曦
  * @Date: 2021-09-09 20:17:33
- * @LastEditTime: 2021-09-10 17:29:54
+ * @LastEditTime: 2021-09-13 09:55:28
  * @LastEditors: Please set LastEditors
  * @Description: 可动的塔吊
  * @FilePath: \widget-vue2\src\components\tower\src\index.vue
 -->
 <template>
-  <canvas
-    id="towerCanvas"
-    width="500"
-    height="500"
-  >当前浏览器不支持Canvas</canvas>
+  <canvas id="towerCanvas" width="500" height="500">当前浏览器不支持Canvas</canvas>
 </template>
 
 <script>
