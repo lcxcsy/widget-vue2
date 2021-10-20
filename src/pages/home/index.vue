@@ -1,7 +1,7 @@
 <!--
  * @Author: liuchenxi
  * @Date: 2021-09-28 16:17:30
- * @LastEditTime: 2021-09-28 17:36:06
+ * @LastEditTime: 2021-10-20 14:11:35
  * @LastEditors: Please set LastEditors
  * @Description: 项目首页
  * @FilePath: \widget-vue2\src\pages\Home.vue
@@ -18,10 +18,17 @@
 
 <script>
 export default {
-  name: "Home",
-  setup () {
-
-    return {}
+  name: 'Home',
+  mounted () {
+    // this.sockets.subscribe('heartBeat', (data) => {
+    //   console.log('heartBeat', data)
+    // })
+    this.sockets.subscribe('index', (data) => {
+      console.log('index', data)
+    })
+    setTimeout(() => {
+      this.$socket.emit('index', 'Hello Server')
+    }, 1000 * 8)
   }
 }
 </script>
@@ -54,7 +61,7 @@ export default {
       background: #fff;
       border-radius: 12px;
       margin: 0 24px;
-      box-shadow: #516395;
+      box-shadow: #9c9fa7;
     }
   }
 }
